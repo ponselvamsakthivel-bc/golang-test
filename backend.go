@@ -27,12 +27,12 @@ func main() {
 	})
 
 	http.HandleFunc("/epoch", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 
 		var response = JsonResponse{Type: "success", Data: TimeData{EpochTime: currentEpochTime(), TimeZone: currentTimeZone()}}
 
 		json.NewEncoder(w).Encode(response)
 	})
-
 
 	fmt.Println("Server at 10000")
 	log.Fatal(http.ListenAndServe(":10000", nil))
@@ -48,3 +48,6 @@ func currentTimeZone() string {
 	return zone
 }
 
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
