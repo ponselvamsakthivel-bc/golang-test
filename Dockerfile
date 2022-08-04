@@ -1,4 +1,4 @@
-FROM golang:1.10
+FROM public.ecr.aws/docker/library/golang:1.18.3-alpine as base
 
 RUN mkdir /app
 COPY ./ /app
