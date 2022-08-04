@@ -1,3 +1,41 @@
+Overview:
+
+This application will convert the server’s epoch time into the human readable format.
+ And also, it will convert the server’s time zone into the Eastern time zone.
+
+Technologies used:
+
+Go-lang ( for backend)
+React JS ( for Frontend)
+
+Links:
+
+Frontend: http://3.16.42.52/
+
+
+
+
+Backend: http://3.16.42.52:10000/epoch
+
+
+
+Backend:
+
+
+Step1 : clone the repo
+
+Step 2: Install go lang in Ubuntu/windows
+
+Step 3: go run <file name>
+
+Ex: go run backend.go
+
+
+Server will start running on “http:/localhost:10000”
+
+Note:  You can change the port in the configuration
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
