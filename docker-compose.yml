@@ -1,0 +1,19 @@
+version: '2'
+services:
+    server:
+        build: ./
+        command: gin
+        volumes:
+            - ./:/go/src/app
+        ports:
+            - "8080:10000"
+    client:
+        build: ./
+        command: npm start
+        volumes:
+            - ./src:/usr/src/app
+            # mount node_modules as a workaround for it disappearing
+            # after adding /client as a mounted folder
+            - /usr/src/app/node_modules
+        ports:
+            - "9000:3000"
